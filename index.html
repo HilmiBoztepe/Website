@@ -138,18 +138,24 @@
     <form name="contact" netlify>
       <p>
         <label>
-          Name
-          <input type="text" name="name" />
+          Ad Soyad
+          <input type="text" name="name" required />
         </label>
       </p>
       <p>
         <label>
           Email
-          <input type="email" name="email" />
+          <input type="email" name="email" required />
         </label>
       </p>
       <p>
-        <button type="submit">Send</button>
+        <label>
+          Mesaj
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+      </p>
+      <p>
+        <button type="submit">Gönder</button>
       </p>
     </form>
   </div>
