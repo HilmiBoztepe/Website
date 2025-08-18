@@ -17,8 +17,18 @@
       padding: 20px;
       text-align: center;
     }
-    header h1 {
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Başlık ortada */
+      gap: 20px; /* Logolar ile başlık arası boşluk */
+    }
+    .header-container h1 {
       margin: 0;
+    }
+    .logo {
+      height: 50px; /* Logoların boyutu */
+      width: auto;
     }
     nav {
       background: #34495e;
@@ -88,7 +98,11 @@
 <body>
 
 <header>
-  <h1>Kalamış Butik Projesi</h1>
+  <div class="header-container">
+    <img src="logo1.png" alt="Firma 1 Logo" class="logo">
+    <h1>Kalamış Butik Projesi</h1>
+    <img src="logo2.png" alt="Firma 2 Logo" class="logo">
+  </div>
   <p>Modern Yaşamın Yeni Adresi</p>
 </header>
 
