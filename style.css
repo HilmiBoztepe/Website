@@ -38,8 +38,8 @@ body {
 
 /* Arka plan fotoğraflarının sırayla değişmesi */
 @keyframes slideshow {
-  0%   { background-image: url('images1/arakat.png'); }
-  33%  { background-image: url('images1/bahce.png'); }
-  66%  { background-image: url('images1/d_ust.png'); }
-  100% { background-image: url('images1/arakat.png'); }
+  0%   { background-image: url('a257566e4fce9c0cb3b6787a1b6d71b7.jpg'); }
+  33%  { background-image: url('a257566e4fce9c0cb3b6787a1b6d71b7.jpg'); }
+  66%  { background-image: url('a257566e4fce9c0cb3b6787a1b6d71b7.jpg'); }
+  100% { background-image: url('a257566e4fce9c0cb3b6787a1b6d71b7.jpg'); }
 }
