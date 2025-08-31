@@ -212,6 +212,15 @@
 <footer>
   <p>&copy; 2025 Kalamış Butik Projesi | Tüm Hakları Saklıdır</p>
 </footer>
-
+<script>
+function openModal(img) {
+  document.getElementById("modal").style.display = "block";
+  document.getElementById("modal-img").src = img.src;
+  document.getElementById("modal-caption").innerHTML = img.alt;
+}
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+</script>
 </body>
 </html>
