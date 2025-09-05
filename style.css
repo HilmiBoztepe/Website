@@ -34,7 +34,19 @@ body {
   background-size: cover;
   background-position: center;
   animation: slideshow 18s infinite;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* kaydırırken sabit kalsın */
+  animation: slideshow 18s infinite;
 }
+}
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+
+  
+
 
 /* Arka plan fotoğraflarının sırayla değişmesi */
 @keyframes slideshow {
