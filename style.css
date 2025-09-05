@@ -46,7 +46,7 @@ html, body {
 }
 @media (max-width: 768px) {
   body {
-    background-image: url('mobil-arka-plan.jpg'); /* daha küçük, optimize edilmiş görsel */
+    background-image: url('images1/cephe1.jpeg'); /* daha küçük, optimize edilmiş görsel */
   }
 }
 
