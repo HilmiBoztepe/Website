@@ -38,7 +38,7 @@ body {
 
 /* Arka plan fotoğraflarının sırayla değişmesi */
 @keyframes slideshow {
-  0%   { background-image: url('images/kalamışöncephe3.jpeg'); }
-  50%  { background-image: url('images/kalamışöncephe1.jpeg'); }
-  100% { background-image: url('images/kalamışöncephe3.jpeg'); }
+  0%   { background-image: url('images/cephe2.jpeg'); }
+  50%  { background-image: url('images/cephe1.jpeg'); }
+  100% { background-image: url('images/cephe2.jpeg'); }
 }
