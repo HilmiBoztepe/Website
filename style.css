@@ -38,8 +38,7 @@ body {
 
 /* Arka plan fotoğraflarının sırayla değişmesi */
 @keyframes slideshow {
-  0%   { background-image: url('a257566e4fce9c0cb3b6787a1b6d71b7.png'); }
-  33%  { background-image: url('a257566e4fce9c0cb3b6787a1b6d71b7.png'); }
-  66%  { background-image: url('a257566e4fce9c0cb3b6787a1b6d71b7.png'); }
-  100% { background-image: url('a257566e4fce9c0cb3b6787a1b6d71b7.png'); }
+  0%   { background-image: url('WhatsApp Image 2025-09-01 at 20.41.36.jpeg'); }
+  50%  { background-image: url('kalamış ön cephe 1.jpeg'); }
+  100% { background-image: url('WhatsApp Image 2025-09-01 at 20.41.36.jpeg'); }
 }
