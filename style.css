@@ -38,7 +38,7 @@ body {
 
 /* Arka plan fotoğraflarının sırayla değişmesi */
 @keyframes slideshow {
-  0%   { background-image: url('WhatsApp Image 2025-09-01 at 20.41.36.jpeg'); }
-  50%  { background-image: url('kalamış ön cephe 1.jpeg'); }
-  100% { background-image: url('WhatsApp Image 2025-09-01 at 20.41.36.jpeg'); }
+  0%   { background-image: url('images/WhatsApp Image 2025-09-01 at 20.41.36.jpeg'); }
+  50%  { background-image: url('images/kalamış ön cephe 1.jpeg'); }
+  100% { background-image: url('images/WhatsApp Image 2025-09-01 at 20.41.36.jpeg'); }
 }
