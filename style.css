@@ -49,6 +49,33 @@ html, body {
     background-image: url('images1/cephe1.jpeg'); /* daha küçük, optimize edilmiş görsel */
   }
 }
+.horizontal-gallery {
+  display: flex;
+  gap: 20px; /* görseller arası boşluk */
+  overflow-x: auto; /* yana kaydırılabilir */
+  scroll-behavior: smooth; /* yumuşak kaydırma */
+  padding: 20px 0;
+}
+
+.horizontal-gallery::-webkit-scrollbar {
+  height: 8px;
+}
+.horizontal-gallery::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.4);
+  border-radius: 10px;
+}
+
+.gallery-item {
+  min-width: 250px; /* her görselin genişliği */
+  flex: 0 0 auto;   /* küçülmesin */
+  text-align: center;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
 
 
   
