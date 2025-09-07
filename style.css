@@ -1,59 +1,34 @@
 /* === GENEL === */
 html, body {
   height: 100%;
-  min-height: 100%;
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-}
-
-/* Slideshow arka plan */
-body {
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* kaydırırken sabit kalsın */
-  animation: slideshow 18s infinite;
-}
-
-/* Arka plan fotoğraflarının sırayla değişmesi */
-@keyframes slideshow {
-  0% { background-image: url('images1/cephe2.jpeg'); }
-  50% { background-image: url('images1/cephe1.jpeg'); }
-  100% { background-image: url('images1/cephe2.jpeg'); }
-}
-
-/* Mobil için farklı arka plan */
-@media (max-width: 768px) {
-  body {
-    background-image: url('images1/cephe1.jpeg'); 
-    animation: none; /* mobilde slideshow kapalı */
-  }
+  background: #f4f4f4;
 }
 
 /* === GALERİ === */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* otomatik sütunlar */
-  gap: 8px; /* görseller arası minimum boşluk */
-  padding: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  padding: 20px;
 }
 
 .gallery-item {
-  position: relative;
-  width: 100%;
-  padding-top: 100%; /* kare kutu oluşturur */
-  overflow: hidden;
-  border-radius: 8px;
+  background: #fff;
+  border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .gallery-item img {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* resmi bozmadan kutuya sığdır */
+  height: 220px;        /* sabit yükseklik */
+  object-fit: cover;    /* görseli bozmadan kutuya tam sığdır */
   cursor: pointer;
   transition: transform 0.3s;
 }
@@ -62,27 +37,42 @@ body {
   transform: scale(1.05);
 }
 
+.caption {
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
 /* === MODAL (Lightbox) === */
 .modal {
-  display: none; /* Başlangıçta kapalı */
+  display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
   z-index: 1000;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+
+  display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column; /* görsel + caption alt alta */
 }
 
 .modal-content {
   max-width: 90%;
   max-height: 80%;
-  object-fit: contain;
   border-radius: 10px;
+  object-fit: contain;
+  margin-bottom: 15px; /* caption ile aralık */
 }
 
+.modal-caption {
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  max-width: 80%;
+}
+
+/* Kapat butonu */
 .close {
   position: absolute;
   top: 20px;
@@ -92,21 +82,20 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
-
 .close:hover { color: #bbb; }
 
+/* Ok butonları */
 .prev, .next {
+  cursor: pointer;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  color: #fff;
-  font-size: 40px;
-  padding: 10px;
-  cursor: pointer;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
   user-select: none;
+  transform: translateY(-50%);
 }
-
 .prev { left: 20px; }
 .next { right: 20px; }
-
 .prev:hover, .next:hover { color: #bbb; }
