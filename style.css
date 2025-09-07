@@ -76,15 +76,17 @@ gallery-item {
   z-index: 1000;
   inset: 0;
   background: rgba(0,0,0,0.9);
-  justify-content: center;
-  align-items: center;
+
+  display: flex;              /* Flex aktif */
+  justify-content: center;    /* Yatay ortala */
+  align-items: center;        /* Dikey ortala */
 }
 
 .modal-content {
   max-width: 90%;
   max-height: 80%;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.4);
+  margin: 0 auto;   /* ekstra güvenlik: ortalamayı pekiştirir */
 }
 
 /* Kapat butonu */
