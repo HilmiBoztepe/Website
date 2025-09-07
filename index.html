@@ -69,31 +69,33 @@
 
 <section id="galeri">
   <h2>Galeri</h2>
-  <div class="horizontal-gallery">
-      <div class="gallery-item">
-        <img src="images1/d_alt.png" alt="Dubleks Alt Kat" onclick="openModal(this)">
-        <p>Dubleks Alt Kat</p>
-      </div>
-      <div class="gallery-item">
-        <img src="images1/d_ust.png" alt="Dubleks Üst Kat" onclick="openModal(this)">
-        <p>Dubleks Üst Kat</p>
-      </div>
-      <div class="gallery-item">
-        <img src="images1/bahce.png" alt="Bahçe Dubleksi" onclick="openModal(this)">
-        <p>Bahçe Dubleksi</p>
-      </div>
-      <div class="gallery-item">
-        <img src="images1/arakat.png" alt="Ara Kat" onclick="openModal(this)">
-        <p>Ara Kat</p>
-      </div>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="images1/d_alt.png" alt="Dubleks Alt Kat" onclick="openModal(0)">
+      <p>Dubleks Alt Kat</p>
+    </div>
+    <div class="gallery-item">
+      <img src="images1/d_ust.png" alt="Dubleks Üst Kat" onclick="openModal(1)">
+      <p>Dubleks Üst Kat</p>
+    </div>
+    <div class="gallery-item">
+      <img src="images1/bahce.png" alt="Bahçe Dubleksi" onclick="openModal(2)">
+      <p>Bahçe Dubleksi</p>
+    </div>
+    <div class="gallery-item">
+      <img src="images1/arakat.png" alt="Ara Kat" onclick="openModal(3)">
+      <p>Ara Kat</p>
+    </div>
   </div>
 </section>
 
-<!-- SADECE BİR TANE modal bırak -->
-<div id="modal" class="modal" onclick="closeModal()">
-  <span class="close" aria-label="Kapat">&times;</span>
-  <img class="modal-content" id="modal-img" alt="">
+<!-- Modal -->
+<div id="modal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modal-img">
   <p id="modal-caption"></p>
+  <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+  <a class="next" onclick="changeSlide(1)">&#10095;</a>
 </div>
 
 <section id="daireler">
@@ -141,51 +143,31 @@
 
 <script>
 let currentIndex = 0;
-let images = [];
-
-document.querySelectorAll('.gallery-item img').forEach((img, index) => {
-  img.addEventListener('click', () => openModal(index));
-  images.push(img);
-});
+const images = [
+  {src: "images1/d_alt.png", alt: "Dubleks Alt Kat"},
+  {src: "images1/d_ust.png", alt: "Dubleks Üst Kat"},
+  {src: "images1/bahce.png", alt: "Bahçe Dubleksi"},
+  {src: "images1/arakat.png", alt: "Ara Kat"}
+];
 
 function openModal(index) {
   currentIndex = index;
-  document.getElementById("modal").style.display = "flex";
-  showImage(currentIndex);
+  document.getElementById("modal").style.display = "block";
+  showSlide(currentIndex);
 }
-
 function closeModal() {
   document.getElementById("modal").style.display = "none";
 }
-
 function changeSlide(step) {
   currentIndex += step;
   if (currentIndex < 0) currentIndex = images.length - 1;
   if (currentIndex >= images.length) currentIndex = 0;
-  showImage(currentIndex);
+  showSlide(currentIndex);
 }
-
-function showImage(index) {
-  const modalImg = document.getElementById("modal-img");
-  const caption = document.getElementById("modal-caption");
-  modalImg.src = images[index].src;
-  caption.innerHTML = images[index].alt;
+function showSlide(index) {
+  document.getElementById("modal-img").src = images[index].src;
+  document.getElementById("modal-caption").innerText = images[index].alt;
 }
-function openModal(img) {
-  const modal = document.getElementById("modal");
-  const modalImg = document.getElementById("modal-img");
-  const caption = document.getElementById("modal-caption");
-  modal.style.display = "block";
-  modalImg.src = img.src;
-  caption.textContent = img.alt || "";
-}
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
-}
-// ESC ile kapat
-document.addEventListener('keydown', function(e){
-  if (e.key === 'Escape') closeModal();
-});
 </script>
 </body>
 </html>
