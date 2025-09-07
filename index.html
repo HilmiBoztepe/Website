@@ -142,36 +142,31 @@
     </div>
   </section>
 
-  <section id="galeri">
-    <h2>Galeri</h2>
-    <div class="gallery">
-      <div class="gallery-item">
-        <img src="images1/d_alt.png" alt="Dubleks Alt Kat" onclick="openModal(0)">
-        <p>Dubleks Alt Kat</p>
-      </div>
-      <div class="gallery-item">
-        <img src="images1/d_ust.png" alt="Dubleks Üst Kat" onclick="openModal(1)">
-        <p>Dubleks Üst Kat</p>
-      </div>
-      <div class="gallery-item">
-        <img src="images1/bahce.png" alt="Bahçe Dubleksi" onclick="openModal(2)">
-        <p>Bahçe Dubleksi</p>
-      </div>
-      <div class="gallery-item">
-        <img src="images1/arakat.png" alt="Ara Kat" onclick="openModal(3)">
-        <p>Ara Kat</p>
-      </div>
+<section id="galeri">
+  <h2>Galeri</h2>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="images1/d_alt.png" alt="Dubleks Alt Kat" onclick="openModal(0)">
     </div>
-  </section>
-
-  <!-- Modal -->
-  <div id="modal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="modal-img">
-    <p id="modal-caption"></p>
-    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    <div class="gallery-item">
+      <img src="images1/d_ust.png" alt="Dubleks Üst Kat" onclick="openModal(1)">
+    </div>
+    <div class="gallery-item">
+      <img src="images1/bahce.png" alt="Bahçe Dubleksi" onclick="openModal(2)">
+    </div>
+    <div class="gallery-item">
+      <img src="images1/arakat.png" alt="Ara Kat" onclick="openModal(3)">
+    </div>
   </div>
+</section>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+  <img class="modal-content" id="modal-img">
+  <span class="next" onclick="changeSlide(1)">&#10095;</span>
+</div>
 
   <section id="daireler">
     <h2>Daire Seçenekleri</h2>
