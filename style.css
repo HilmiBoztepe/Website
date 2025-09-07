@@ -66,8 +66,8 @@ html, body {
 }
 
 .gallery-item {
-  min-width: 250px; /* her görselin genişliği */
-  flex: 0 0 auto;   /* küçülmesin */
+  min-width: 150px; /* önce 250px idi → küçülttük */
+  flex: 0 0 auto;
   text-align: center;
 }
 
@@ -75,6 +75,8 @@ html, body {
   width: 100%;
   height: auto;
   border-radius: 10px;
+  max-height: 120px; /* görselin yüksekliğini sınırladık */
+  object-fit: cover; /* orantıyı bozmadan kırpar */
 }
 
 
