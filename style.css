@@ -42,19 +42,18 @@ html, body {
   font-size: 14px;
   color: #333;
 }
-
 /* === MODAL (Lightbox) === */
 .modal {
-  display: none;
+  display: none;               /* Başlangıçta gizli */
   position: fixed;
   z-index: 1000;
   inset: 0;
   background: rgba(0,0,0,0.9);
 
-  display: flex;
+  /* Flex özellikleri JS ile açılınca çalışacak */
   justify-content: center;
   align-items: center;
-  flex-direction: column; /* görsel + caption alt alta */
+  flex-direction: column;
 }
 
 .modal-content {
@@ -62,7 +61,7 @@ html, body {
   max-height: 80%;
   border-radius: 10px;
   object-fit: contain;
-  margin-bottom: 15px; /* caption ile aralık */
+  margin-bottom: 15px;
 }
 
 .modal-caption {
@@ -99,3 +98,4 @@ html, body {
 .prev { left: 20px; }
 .next { right: 20px; }
 .prev:hover, .next:hover { color: #bbb; }
+
