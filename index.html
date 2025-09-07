@@ -145,21 +145,21 @@
 <section id="galeri">
   <h2>Galeri</h2>
   <div class="gallery">
-    <div class="gallery-item">
-      <img src="images1/d_alt.png" alt="Dubleks Alt Kat" onclick="openModal(0)">
-      <div class="caption">Cephe Görünümü 1</div>
+    <div class="gallery-item" onclick="openModal(0)">
+      <img src="images1/d_alt.png" alt="Dubleks Alt Kat">
+      <p class="caption">Dubleks Alt Kat</p>
     </div>
-    <div class="gallery-item">
-      <img src="images1/d_ust.png" alt="Dubleks Üst Kat" onclick="openModal(1)">
-      <div class="caption">Cephe Görünümü 1</div>
+    <div class="gallery-item" onclick="openModal(1)">
+      <img src="images1/d_ust.png" alt="Dubleks Üst Kat">
+      <p class="caption">Dubleks Üst Kat</p>
     </div>
-    <div class="gallery-item">
-      <img src="images1/bahce.png" alt="Bahçe Dubleksi" onclick="openModal(2)">
-      <div class="caption">Cephe Görünümü 1</div>
+    <div class="gallery-item" onclick="openModal(2)">
+      <img src="images1/bahce.png" alt="Bahçe Dubleksi">
+      <p class="caption">Bahçe Dubleksi</p>
     </div>
-    <div class="gallery-item">
-      <img src="images1/arakat.png" alt="Ara Kat" onclick="openModal(3)">
-      <div class="caption">Cephe Görünümü 1</div>
+    <div class="gallery-item" onclick="openModal(3)">
+      <img src="images1/arakat.png" alt="Ara Kat">
+      <p class="caption">Ara Kat</p>
     </div>
   </div>
 </section>
@@ -167,9 +167,10 @@
 <!-- Modal -->
 <div id="modal" class="modal">
   <span class="close" onclick="closeModal()">&times;</span>
-  <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+  <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
   <img class="modal-content" id="modal-img">
-  <span class="next" onclick="changeSlide(1)">&#10095;</span>
+  <p class="modal-caption" id="modal-caption"></p>
+  <a class="next" onclick="changeSlide(1)">&#10095;</a>
 </div>
 
   <section id="daireler">
@@ -208,32 +209,35 @@
   </footer>
 
 <script>
-let currentIndex = 0;
-const images = document.querySelectorAll('.gallery-item img');
-const captions = document.querySelectorAll('.caption');
-const modal = document.getElementById("myModal");
-const modalImg = document.getElementById("modal-img");
-const modalCaption = document.getElementById("modal-caption");
+  let currentIndex = 0;
+  const images = [
+    { src: "images1/d_alt.png", alt: "Dubleks Alt Kat" },
+    { src: "images1/d_ust.png", alt: "Dubleks Üst Kat" },
+    { src: "images1/bahce.png", alt: "Bahçe Dubleksi" },
+    { src: "images1/arakat.png", alt: "Ara Kat" }
+  ];
 
-function openModal(index) {
-  currentIndex = index;
-  modal.style.display = "flex";   // modal açıldığında flex aktif
-  showImage();
-}
+  function openModal(index) {
+    currentIndex = index;
+    document.getElementById("modal").style.display = "flex";
+    showSlide(currentIndex);
+  }
 
-function closeModal() {
-  modal.style.display = "none";   // modal kapanır
-}
+  function closeModal() {
+    document.getElementById("modal").style.display = "none";
+  }
 
-function changeSlide(step) {
-  currentIndex = (currentIndex + step + images.length) % images.length;
-  showImage();
-}
+  function changeSlide(step) {
+    currentIndex += step;
+    if (currentIndex < 0) currentIndex = images.length - 1;
+    if (currentIndex >= images.length) currentIndex = 0;
+    showSlide(currentIndex);
+  }
 
-function showImage() {
-  modalImg.src = images[currentIndex].src;
-  modalCaption.textContent = captions[currentIndex].textContent;
-}
+  function showSlide(index) {
+    document.getElementById("modal-img").src = images[index].src;
+    document.getElementById("modal-caption").innerText = images[index].alt;
+  }
 </script>
 
 
