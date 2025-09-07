@@ -33,26 +33,25 @@ body {
 /* === GALERİ THUMBNAIL === */
 
 .gallery {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* kare kutular */
+  gap: 5px; /* aradaki boşluğu küçülttük */
+  padding: 10px;
 }
 
 .gallery-item {
-  width: 200px;
-  height: 200px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* kare kutular */
   overflow: hidden;
-  border-radius: 10px;
-  cursor: pointer;
+  border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
+
 .gallery-item img {
   width: 100%;
-  aspect-ratio: 1 / 1; /* kare */
-  border-radius: 10px;
-  object-fit: cover;   /* resmi kırp ama bozmadan */
+  height: 100%;
+  object-fit: cover; /* görsel kutuya tam oturur */
   cursor: pointer;
   transition: transform 0.3s;
 }
