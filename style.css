@@ -70,22 +70,28 @@ gallery-item {
 }
 
 /* === MODAL (Lightbox) === */
+/* Modal (Lightbox) */
 .modal {
-  display: none;               /* Başlangıçta kapalı olacak */
+  display: none;               /* Başlangıçta kapalı */
   position: fixed;
   z-index: 1000;
   inset: 0;
   background: rgba(0,0,0,0.9);
 
-  justify-content: center;     /* Ortala */
-  align-items: center;
+  display: flex;              /* Flex aktif */
+  justify-content: center;    /* Yatay ortala */
+  align-items: center;        /* Dikey ortala */
 }
+
 .modal-content {
   max-width: 90%;
   max-height: 80%;
   border-radius: 10px;
-  margin: 0 auto;   /* ekstra güvenlik: ortalamayı pekiştirir */
+  margin: auto;              /* Ortalamayı pekiştirir */
+  display: block;            /* Görsel blok olarak */
+  object-fit: contain;       /* Görsel taşmasın, oran korunur */
 }
+
 
 /* Kapat butonu */
 .close {
