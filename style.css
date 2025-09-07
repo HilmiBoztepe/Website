@@ -47,20 +47,24 @@ body {
   border-radius: 10px;
 }
 
-.gallery-item {
-  min-width: 220px;
+gallery-item {
+  width: 220px;           /* kutu genişliği */
+  height: 220px;          /* kutu yüksekliği */
   flex: 0 0 auto;
   text-align: center;
+  overflow: hidden;       /* taşan kısmı gizle */
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 .gallery-item img {
   width: 100%;
-  aspect-ratio: 1 / 1; /* kare */
-  border-radius: 10px;
-  object-fit: cover;   /* resmi kırp ama bozmadan */
+  height: 100%;
+  object-fit: cover;   /* resmi bozmadan kutuya sığdırır */
   cursor: pointer;
   transition: transform 0.3s;
 }
+
 .gallery-item img:hover {
   transform: scale(1.05);
 }
