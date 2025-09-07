@@ -31,36 +31,48 @@ body {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* kareler daha küçük olur */
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
   max-width: 1100px;
   margin: 0 auto;
   padding: 20px;
 }
 
 .gallery-item {
-  position: relative;
+  display: flex;
+  flex-direction: column;  /* üstte görsel, altta yazı */
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+/* Kare görsel kutusu */
+.gallery-image {
   width: 100%;
   aspect-ratio: 1/1;      /* kare kutu */
   overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   background: #000;
 }
 
-.gallery-item img {
+.gallery-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;      /* kutuyu tam doldur */
+  object-fit: cover;      /* resim tam otursun */
   display: block;
 }
 
+/* Açıklama metni */
 .caption {
   padding: 10px;
   text-align: center;
   font-size: 14px;
+  color: #333;
   background: #fafafa;
+  width: 100%;
 }
+
 
 
 /* === MODAL (Lightbox) === */
