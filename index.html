@@ -208,40 +208,35 @@
     <p>&copy; 2025 Kalamış Butik Projesi | Tüm Hakları Saklıdır</p>
   </footer>
 
-  <script>
-    let currentIndex = 0;
-    const images = [
-      {src: "images1/d_alt.png", alt: "Dubleks Alt Kat"},
-      {src: "images1/d_ust.png", alt: "Dubleks Üst Kat"},
-      {src: "images1/bahce.png", alt: "Bahçe Dubleksi"},
-      {src: "images1/arakat.png", alt: "Ara Kat"}
-    ];
+<script>
+let currentIndex = 0;
+const images = [
+  {src: "images1/d_alt.png", alt: "Dubleks Alt Kat"},
+  {src: "images1/d_ust.png", alt: "Dubleks Üst Kat"},
+  {src: "images1/bahce.png", alt: "Bahçe Dubleksi"},
+  {src: "images1/arakat.png", alt: "Ara Kat"}
+];
 
-    function openModal(index) {
-      currentIndex = index;
-      const modal = document.getElementById("modal");
-      modal.style.display = "flex";
-      showSlide(currentIndex);
-    }
+function openModal(index) {
+  currentIndex = index;
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+  modal.style.display = "flex";
+  modalImg.src = images[index].src;
+}
 
-    function closeModal() {
-      document.getElementById("modal").style.display = "none";
-    }
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
 
-    function changeSlide(step) {
-      currentIndex += step;
-      if(currentIndex < 0) currentIndex = images.length - 1;
-      if(currentIndex >= images.length) currentIndex = 0;
-      showSlide(currentIndex);
-    }
+function changeSlide(step) {
+  currentIndex += step;
+  if(currentIndex < 0) currentIndex = images.length - 1;
+  if(currentIndex >= images.length) currentIndex = 0;
+  document.getElementById("modal-img").src = images[currentIndex].src;
+}
+</script>
 
-    function showSlide(index) {
-      const modalImg = document.getElementById("modal-img");
-      const caption = document.getElementById("modal-caption");
-      modalImg.src = images[index].src;
-      caption.textContent = images[index].alt;
-    }
-  </script>
 
 </body>
 </html>
