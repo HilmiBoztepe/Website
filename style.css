@@ -1,54 +1,36 @@
-/* Lightbox / Modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  inset: 0;               /* top/left/right/bottom:0 kısayolu */
-  padding-top: 60px;
-  background: rgba(0,0,0,0.9);
+/* === GENEL === */
+html, body {
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
 }
-.modal-content {
-  display: block;
-  margin: auto;
-  max-width: 80%;
-  max-height: 80%;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.4);
-}
-.close {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-}
-.close:hover { color: #bbb; }
 
 /* Slideshow arka plan */
 body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  animation: slideshow 18s infinite;
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* kaydırırken sabit kalsın */
   animation: slideshow 18s infinite;
+  font-family: Arial, sans-serif;
 }
+
+/* Arka plan fotoğraflarının sırayla değişmesi */
+@keyframes slideshow {
+  0%   { background-image: url('images1/cephe2.jpeg'); }
+  50%  { background-image: url('images1/cephe1.jpeg'); }
+  100% { background-image: url('images1/cephe2.jpeg'); }
 }
-html, body {
-  height: 100%;
-  min-height: 100%;
-}
+
+/* Mobil için farklı arka plan */
 @media (max-width: 768px) {
   body {
-    background-image: url('images1/cephe1.jpeg'); /* daha küçük, optimize edilmiş görsel */
+    background-image: url('images1/cephe1.jpeg'); /* optimize edilmiş küçük görsel */
+    animation: none; /* mobilde slideshow kapalı */
   }
 }
+
+/* === YATAY GALERİ === */
 .horizontal-gallery {
   display: flex;
   gap: 20px; /* görseller arası boşluk */
@@ -66,7 +48,7 @@ html, body {
 }
 
 .gallery-item {
-  min-width: 220px; /* biraz daha büyük */
+  min-width: 220px;
   flex: 0 0 auto;
   text-align: center;
 }
@@ -84,7 +66,7 @@ html, body {
   transform: scale(1.05);
 }
 
-/* Modal (Lightbox) için stiller */
+/* === MODAL (Lightbox) === */
 .modal {
   display: none;
   position: fixed;
@@ -99,7 +81,20 @@ html, body {
   max-width: 90%;
   max-height: 80%;
   border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.4);
 }
+
+/* Kapat butonu */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover { color: #bbb; }
 
 /* Ok butonları */
 .prev, .next {
@@ -114,30 +109,6 @@ html, body {
   transition: 0.3s;
   user-select: none;
 }
-.prev:hover, .next:hover {
-  color: #bbb;
-}
+.prev:hover, .next:hover { color: #bbb; }
 .prev { left: 20px; }
 .next { right: 20px; }
-
-.close {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-}
-.close:hover { color: #bbb; }
-
-
-  
-
-
-/* Arka plan fotoğraflarının sırayla değişmesi */
-@keyframes slideshow {
-  0%   { background-image: url('images1/cephe2.jpeg'); }
-  50%  { background-image: url('images1/cephe1.jpeg'); }
-  100% { background-image: url('images1/cephe2.jpeg'); }
-}
