@@ -5,122 +5,243 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kalamış Butik Projesi</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #c6d7e7;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .header-container h1 {
+      margin: 0;
+    }
+
+    .logo {
+      height: 80px;
+      width: auto;
+    }
+
+    nav {
+      background: #34495e;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      cursor: zoom-in;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    .contact {
+      background: #ecf0f1;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 15px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #27ae60;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #2ecc71;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <div class="header-container">
-    <img src="boztepe-logo-beyaz.svg" alt="Firma 1 Logo" class="logo">
-    <h1>Kalamış Butik Projesi</h1>
-    <img src="boztepe-logo-beyaz.svg" alt="Firma 2 Logo" class="logo">
+  <header>
+    <div class="header-container">
+      <img src="boztepe-logo-beyaz.svg" alt="Firma 1 Logo" class="logo">
+      <h1>Kalamış Butik Projesi</h1>
+      <img src="boztepe-logo-beyaz.svg" alt="Firma 2 Logo" class="logo">
+    </div>
+    <p>Modern Yaşamın Yeni Adresi</p>
+  </header>
+
+  <nav>
+    <a href="#hakkinda">Hakkında</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#daireler">Daireler</a>
+    <a href="#iletisim">İletişim</a>
+  </nav>
+
+  <section id="hakkinda">
+    <h2>Proje Hakkında</h2>
+    <div class="card">
+      <p>İstanbul’un en seçkin bölgelerinden biri olan Kalamış’ta konumlanan projemiz, sakinlerine hem prestijli hem de güvenli bir yaşam alanı sunmaktadır.</p>
+      <p>Şehrin merkezinde, Kalamış Parkı’na yalnızca 700 metre, Moda Sahili’ne yürüme mesafesi, en yakın hastaneye 50 metre uzaklığıyla ayrıcalıklı bir konumda yer almaktadır. Ayrıca Söğütlüçeşme Metrobüs ve Marmaray istasyonlarına 1.5 km mesafede bulunması ve E-5 karayoluna kolay bağlantı imkanıyla İstanbul’un farklı noktalarına hızlı erişim sağlamaktadır.</p>
+      <p>Toplam 8 daireden oluşan projemizde, her katta yalnızca bir daire yer almakta ve sakinlere daha özel ve konforlu bir yaşam sunulmaktadır. Her daireye özel 1 araçlık otopark, yangın merdiveni, yangın söndürme altyapısı ve 2.5 tonluk paslanmaz çelik su deposu ile güvenlik ve konfor en üst seviyeye çıkarılmıştır.</p>
+      <p>Deprem riskine karşı yüksek güvenlik standartlarıyla tasarlanan yapımız, aynı zamanda üst katlarda eşsiz deniz manzarası ve Kalamış Yat Limanı’na sadece 1.2 km mesafesi ile denizle iç içe bir yaşam ayrıcalığı sunmaktadır.</p>
+      <p>Modern mimarisi, güvenlik önlemleri ve merkezi konumuyla projemiz, İstanbul’un kalbinde yeni bir yaşam standardı oluşturuyor.</p>
+    </div>
+  </section>
+
+  <section id="galeri">
+    <h2>Galeri</h2>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="images1/d_alt.png" alt="Dubleks Alt Kat" onclick="openModal(0)">
+        <p>Dubleks Alt Kat</p>
+      </div>
+      <div class="gallery-item">
+        <img src="images1/d_ust.png" alt="Dubleks Üst Kat" onclick="openModal(1)">
+        <p>Dubleks Üst Kat</p>
+      </div>
+      <div class="gallery-item">
+        <img src="images1/bahce.png" alt="Bahçe Dubleksi" onclick="openModal(2)">
+        <p>Bahçe Dubleksi</p>
+      </div>
+      <div class="gallery-item">
+        <img src="images1/arakat.png" alt="Ara Kat" onclick="openModal(3)">
+        <p>Ara Kat</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modal-img">
+    <p id="modal-caption"></p>
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
   </div>
-  <p>Modern Yaşamın Yeni Adresi</p>
-</header>
 
-<nav>
-  <a href="#hakkinda">Hakkında</a>
-  <a href="#galeri">Galeri</a>
-  <a href="#daireler">Daireler</a>
-  <a href="#iletisim">İletişim</a>
-</nav>
+  <section id="daireler">
+    <h2>Daire Seçenekleri</h2>
+    <div class="card">
+      <h3>2+1 Bahçe Dubleks Daire</h3>
+      <p>Metrekare: 119 m²</p>
+    </div>
+    <div class="card">
+      <h3>3+1 Ara Kat Daireler</h3>
+      <p>Metrekare: 127 m²</p>
+    </div>
+    <div class="card">
+      <h3>3+2 Çatı Katı Dubleks Daire</h3>
+      <p>Metrekare: 192 m²</p>
+    </div>
+  </section>
 
-<section id="hakkinda">
-  <h2>Proje Hakkında</h2>
-  <div class="card">
-    <p>İstanbul’un en seçkin bölgelerinden biri olan Kalamış’ta konumlanan projemiz, sakinlerine hem prestijli hem de güvenli bir yaşam alanı sunmaktadır.</p>
-    <p>Şehrin merkezinde, Kalamış Parkı’na yalnızca 700 metre, Moda Sahili’ne yürüme mesafesi, en yakın hastaneye 50 metre uzaklığıyla ayrıcalıklı bir konumda yer almaktadır. Ayrıca Söğütlüçeşme Metrobüs ve Marmaray istasyonlarına 1.5 km mesafede bulunması ve E-5 karayoluna kolay bağlantı imkanıyla İstanbul’un farklı noktalarına hızlı erişim sağlamaktadır.</p>
-    <p>Toplam 8 daireden oluşan projemizde, her katta yalnızca bir daire yer almakta ve sakinlere daha özel ve konforlu bir yaşam sunulmaktadır. Her daireye özel 1 araçlık otopark, yangın merdiveni, yangın söndürme altyapısı ve 2.5 tonluk paslanmaz çelik su deposu ile güvenlik ve konfor en üst seviyeye çıkarılmıştır.</p>
-    <p>Deprem riskine karşı yüksek güvenlik standartlarıyla tasarlanan yapımız, aynı zamanda üst katlarda eşsiz deniz manzarası ve Kalamış Yat Limanı’na sadece 1.2 km mesafesi ile denizle iç içe bir yaşam ayrıcalığı sunmaktadır.</p>
-    <p>Modern mimarisi, güvenlik önlemleri ve merkezi konumuyla projemiz, İstanbul’un kalbinde yeni bir yaşam standardı oluşturuyor.</p>
-  </div>  
-</section>
+  <section id="iletisim">
+    <h2>İletişim</h2>
+    <div class="contact">
+      <form name="contact" netlify>
+        <p><label>Ad Soyad <input type="text" name="name" required></label></p>
+        <p><label>Email <input type="email" name="email" required></label></p>
+        <p><label>Mesaj <textarea name="message" rows="5" required></textarea></label></p>
+        <p><button type="submit">Gönder</button></p>
+      </form>
+      <div class="phone">
+        <p><strong>Telefon:</strong> <a href="tel:+905551112233" style="color:#2c3e50; text-decoration:none;">+90 555 111 22 33</a></p>
+      </div>
+    </div>
+  </section>
 
-<section id="galeri">
-  <h2>Galeri</h2>
-  <div class="horizontal-gallery">
-    <div class="gallery-item"><img src="images1/d_alt.png" alt="Dubleks Alt Kat" onclick="openModal(0)"></div>
-    <div class="gallery-item"><img src="images1/d_ust.png" alt="Dubleks Üst Kat" onclick="openModal(1)"></div>
-    <div class="gallery-item"><img src="images1/bahce.png" alt="Bahçe Dubleksi" onclick="openModal(2)"></div>
-    <div class="gallery-item"><img src="images1/arakat.png" alt="Ara Kat" onclick="openModal(3)"></div>
-  </div>
-</section>
+  <footer>
+    <p>&copy; 2025 Kalamış Butik Projesi | Tüm Hakları Saklıdır</p>
+  </footer>
 
-<!-- Modal -->
-<div id="modal" class="modal">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="modal-img">
-  <p id="modal-caption"></p>
-  <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
-  <span class="next" onclick="changeSlide(1)">&#10095;</span>
-</div>
+  <script>
+    let currentIndex = 0;
+    const images = [
+      {src: "images1/d_alt.png", alt: "Dubleks Alt Kat"},
+      {src: "images1/d_ust.png", alt: "Dubleks Üst Kat"},
+      {src: "images1/bahce.png", alt: "Bahçe Dubleksi"},
+      {src: "images1/arakat.png", alt: "Ara Kat"}
+    ];
 
-<section id="daireler">
-  <h2>Daire Seçenekleri</h2>
-  <div class="card">
-    <h3>2+1 Bahçe Dubleks Daire</h3>
-    <p>Metrekare: 119 m²</p>
-  </div>
-  <div class="card">
-    <h3>3+1 Ara Kat Daireler</h3>
-    <p>Metrekare: 127 m²</p>
-  </div>
-  <div class="card">
-    <h3>3+2 Çatı Katı Dubleks Daire</h3>
-    <p>Metrekare: 192 m²</p>
-  </div>
-</section>
+    function openModal(index) {
+      currentIndex = index;
+      const modal = document.getElementById("modal");
+      modal.style.display = "flex";
+      showSlide(currentIndex);
+    }
 
-<section id="iletisim">
-  <h2>İletişim</h2>
-  <div class="contact">
-    <form name="contact" netlify>
-      <p><label>Ad Soyad <input type="text" name="name" required></label></p>
-      <p><label>Email <input type="email" name="email" required></label></p>
-      <p><label>Mesaj <textarea name="message" rows="5" required></textarea></label></p>
-      <p><button type="submit">Gönder</button></p>
-    </form>
-    <p><strong>Telefon:</strong> <a href="tel:+905551112233">+90 555 111 22 33</a></p>
-  </div>
-</section>
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
 
-<footer>
-  <p>&copy; 2025 Kalamış Butik Projesi | Tüm Hakları Saklıdır</p>
-</footer>
+    function changeSlide(step) {
+      currentIndex += step;
+      if(currentIndex < 0) currentIndex = images.length - 1;
+      if(currentIndex >= images.length) currentIndex = 0;
+      showSlide(currentIndex);
+    }
 
-<script>
-let currentIndex = 0;
-const images = [
-  {src: "images1/d_alt.png", alt: "Dubleks Alt Kat"},
-  {src: "images1/d_ust.png", alt: "Dubleks Üst Kat"},
-  {src: "images1/bahce.png", alt: "Bahçe Dubleksi"},
-  {src: "images1/arakat.png", alt: "Ara Kat"}
-];
-
-function openModal(index) {
-  currentIndex = index;
-  const modal = document.getElementById("modal");
-  modal.style.display = "flex";
-  showSlide(currentIndex);
-}
-
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
-}
-
-function changeSlide(step) {
-  currentIndex += step;
-  if(currentIndex < 0) currentIndex = images.length - 1;
-  if(currentIndex >= images.length) currentIndex = 0;
-  showSlide(currentIndex);
-}
-
-function showSlide(index) {
-  const modalImg = document.getElementById("modal-img");
-  const caption = document.getElementById("modal-caption");
-  modalImg.src = images[index].src;
-  caption.textContent = images[index].alt;
-}
-</script>
+    function showSlide(index) {
+      const modalImg = document.getElementById("modal-img");
+      const caption = document.getElementById("modal-caption");
+      modalImg.src = images[index].src;
+      caption.textContent = images[index].alt;
+    }
+  </script>
 
 </body>
 </html>
