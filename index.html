@@ -150,14 +150,19 @@ const images = [
   {src: "images1/arakat.png", alt: "Ara Kat"}
 ];
 
-function openModal(index) {
-  currentIndex = index;
-  document.getElementById("modal").style.display = "block";
-  showSlide(currentIndex);
+function openModal(img) {
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+  const caption = document.getElementById("modal-caption");
+
+  modal.style.display = "flex";   // Açarken flex
+  modalImg.src = img.src;
+  caption.textContent = img.alt;
 }
 function closeModal() {
   document.getElementById("modal").style.display = "none";
 }
+
 function changeSlide(step) {
   currentIndex += step;
   if (currentIndex < 0) currentIndex = images.length - 1;
