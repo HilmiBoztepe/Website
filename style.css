@@ -55,10 +55,9 @@ body {
 
 .gallery-item img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 1 / 1; /* kare */
   border-radius: 10px;
-  max-height: 180px; /* thumbnail yüksekliği */
-  object-fit: cover;
+  object-fit: cover;   /* resmi kırp ama bozmadan */
   cursor: pointer;
   transition: transform 0.3s;
 }
