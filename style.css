@@ -31,12 +31,11 @@ body {
 }
 
 /* === GALERİ THUMBNAIL === */
+
 .gallery {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px; /* görseller arası boşluk */
 }
 
 .gallery-item {
