@@ -216,7 +216,8 @@ function openModal(index) {
   currentIndex = index;
   const modal = document.getElementById("modal");
   const modalImg = document.getElementById("modal-img");
-  modal.style.display = "flex";
+
+  modal.style.display = "flex"; // Modal sadece tıklayınca açılır
   modalImg.src = images[index].src;
 }
 
