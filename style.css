@@ -29,30 +29,29 @@ body {
   }
 }
 
-/* Galeri grid */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* kareler daha küçük olur */
   gap: 15px;
   max-width: 1100px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Galeri kartları */
 .gallery-item {
-  background: #fff;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;      /* kare kutu */
+  overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  background: #000;
 }
 
 .gallery-item img {
   width: 100%;
-  aspect-ratio: 1/1;     /* kare */
-  object-fit: cover;     /* resmi tam sığdır, taşanı kırp */
+  height: 100%;
+  object-fit: cover;      /* kutuyu tam doldur */
   display: block;
 }
 
