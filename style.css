@@ -134,10 +134,7 @@ body {
 /* === Mobil düzenlemeler === */
 @media (max-width: 768px) {
   /* Header */
-  .header-container {
-    flex-direction: column; /* Logolar ve başlık alt alta gelsin */
-    gap: 10px;
-  }
+  
   .logo {
     height: 60px; /* Küçük logo */
   }
