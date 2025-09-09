@@ -129,3 +129,39 @@ body {
 .prev { left: 20px; }
 .next { right: 20px; }
 .prev:hover, .next:hover { color: #bbb; }
+
+
+/* === Mobil düzenlemeler === */
+@media (max-width: 768px) {
+  /* Header */
+  .header-container {
+    flex-direction: column; /* Logolar ve başlık alt alta gelsin */
+    gap: 10px;
+  }
+  .logo {
+    height: 60px; /* Küçük logo */
+  }
+  header h1 {
+    font-size: 22px;
+  }
+
+  /* Galeri */
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 sütun yap */
+    gap: 10px;
+  }
+  .gallery-item {
+    width: 100%;
+    height: auto;
+  }
+  .gallery-item img {
+    height: 150px; /* Mobilde daha küçük kare */
+    object-fit: cover;
+  }
+
+  /* Form */
+  input, textarea, button {
+    font-size: 16px; /* Mobil uyumlu yazı boyutu */
+  }
+}
+
