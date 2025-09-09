@@ -161,4 +161,30 @@ body {
     font-size: 16px; /* Mobil uyumlu yazı boyutu */
   }
 }
+/* Tüm input ve textarea için temel stil */
+form input,
+form textarea {
+  width: 100%;              /* kutu formun genişliğini aşmaz */
+  max-width: 400px;         /* çok büyümesin */
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;   /* padding/border genişlik taşırmaz */
+  font-size: 16px;
+}
+
+/* Buton düzenlemesi */
+form button {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #34495e;
+}
 
